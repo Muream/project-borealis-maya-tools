@@ -1,3 +1,5 @@
+import os
+
 import maya.cmds as cmds
 
 from config import write_config, get_config
@@ -21,3 +23,21 @@ def get_assets_dir():
     assets_dir = config.get('assets_dir')
 
     return assets_dir
+
+
+def current_asset_dir():
+    sceneName = cmds.file(query=True, sceneName=True)
+    if not os.path.exists(sceneName):
+        return
+    asset_dir = os.path.dirname(sceneName)
+    return asset_dir
+
+
+def release_dir():
+    asset_dir = current_asset_dir()
+    return os.path.join(asset_dir, 'release')
+
+
+def old_dir():
+    asset_dir = current_asset_dir()
+    return os.path.join(asset_dir, 'old')

@@ -5,20 +5,7 @@ import logging
 
 import maya.cmds as cmds
 
-logger = logging.getLogger()
-
-# pulling the latest changes needs to be done before importing anything from the tools.
-import subprocess
-
-
-def pull_latest_changes():
-    subprocess.check_output(["git", "pull"])
-
-
-try:
-    pull_latest_changes()
-except Exception as e:
-    logger.error(e)
+logger = logging.getLogger(__file__)
 
 from .config import get_config, write_config
 from .menu import build_menu
@@ -50,6 +37,7 @@ def add_vendor_to_path():
     site.addsitedir(os.path.join(pb_tools, 'vendor'))
 
 
+logger.info("Loading Project Borealis tools.")
 sys.dont_write_bytecode = True
 init_assets_dir()
 set_project()

@@ -16,8 +16,15 @@ MENU_ITEMS = [
     },
     {
         "name": "set_assets_directory",
-        "command": "import general.assets;general.assets.set_assets_dir()",
+        "command":
+        "import pb.general.assets;pb.general.assets.set_assets_dir()",
         "label": "Set Assets Directory",
+        "parent": "general",
+    },
+    {
+        "name": "reload_pb_tools",
+        "command": "import pb.general;pb.general.reload_pb_tools()",
+        "label": "Reload Tools",
         "parent": "general",
     },
     {
