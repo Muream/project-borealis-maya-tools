@@ -2,7 +2,7 @@
 
 Before you get started with the tools, You need a few things.
 
-* I recommend you set up the unreal project first because it covers everything you need to get the tools.
+* I recommend you set up the unreal project first because it covers everything you need to get the tools. Here's the wiki: https://projectborealisgitlab.site/project-borealis/main/pb/wikis/home
 * You will need to have the `raw-assets` locally on your drive. It's located at the root of our google drive. If you don't have access to that, ask a project administrator to give you access.
 
 # Setup
