@@ -19,10 +19,12 @@ def set_assets_dir():
 
 
 def get_assets_dir():
-    config = get_config()
-    assets_dir = config.get('assets_dir')
-
-    return assets_dir
+    try:
+        config = get_config()
+        assets_dir = config.get('assets_dir')
+        return assets_dir
+    except:
+        return None
 
 
 def current_asset_dir():

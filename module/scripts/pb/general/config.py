@@ -6,9 +6,12 @@ CONFIG_FILE = os.path.join(tools_dir, "config.json")
 
 
 def get_config():
-    with open(CONFIG_FILE, "r") as f:
-        settings = json.loads(f.read())
-    return settings
+    try:
+        with open(CONFIG_FILE, "r") as f:
+            settings = json.loads(f.read())
+        return settings
+    except:
+        return {}
 
 
 def write_config(config):

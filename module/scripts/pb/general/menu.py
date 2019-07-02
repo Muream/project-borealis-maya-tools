@@ -33,6 +33,12 @@ MENU_ITEMS = [
         "subMenu": True,
     },
     {
+        "name": "studiolib",
+        "command": "from pb.animation.studiolib import open_shared_lib;open_shared_lib()",
+        "label": "Open Studio Library",
+        "parent": "animation",
+    },
+    {
         "name": "publish",
         # "command": "import mop;mop.incremental_save()",
         "label": "Publish",
