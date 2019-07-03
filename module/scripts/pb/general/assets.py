@@ -5,7 +5,6 @@ import maya.cmds as cmds
 
 
 def set_assets_dir():
-    config = get_config()
     assets_dir = cmds.fileDialog2(
         fileMode=3,
         okCaption='Browse',
@@ -13,17 +12,11 @@ def set_assets_dir():
     )
     if assets_dir is not None:
         assets_dir = assets_dir[0]
-        config['assets_dir'] = assets_dir
-        write_config(config)
+        os.environ['PROJECT_BOREALIS_ASSETS'] = assets_dir
 
 
 def assets_dir():
-    try:
-        config = get_config()
-        assets_dir = config.get('assets_dir')
-        return assets_dir
-    except:
-        return None
+    return os.environ['PROJECT_BOREALIS_ASSETS']
 
 
 def asset_dir():
