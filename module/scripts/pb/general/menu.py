@@ -40,7 +40,7 @@ MENU_ITEMS = [
     },
     {
         "name": "publish",
-        # "command": "import mop;mop.incremental_save()",
+        "command": "from pb.animation.publish import publish;publish()",
         "label": "Publish",
         "parent": "animation",
     },
