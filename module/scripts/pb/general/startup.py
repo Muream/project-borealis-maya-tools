@@ -14,7 +14,8 @@ from .assets import assets_dir, set_assets_dir
 
 def add_vendor_to_path():
     pb_tools = os.path.dirname(__file__)
-    site.addsitedir(os.path.join(pb_tools, "..", "vendor"))
+    vendor_path = os.path.join(pb_tools, "..", "..", "..", "vendor")
+    site.addsitedir(vendor_path)
 
 
 logger.info("Loading Project Borealis tools.")
