@@ -26,12 +26,6 @@ def init_assets_dir():
             set_assets_dir()
 
 
-def set_project():
-    assets_dir = get_assets_dir()
-    if assets_dir:
-        cmds.workspace(directory=assets_dir)
-
-
 def add_vendor_to_path():
     pb_tools = os.path.dirname(__file__)
     site.addsitedir(os.path.join(pb_tools, 'vendor'))
@@ -40,5 +34,4 @@ def add_vendor_to_path():
 logger.info("Loading Project Borealis tools.")
 sys.dont_write_bytecode = True
 init_assets_dir()
-set_project()
 build_menu()
