@@ -7,7 +7,6 @@ import maya.cmds as cmds
 
 logger = logging.getLogger(__file__)
 
-from .config import get_config, write_config
 from .menu import build_menu
 from .assets import assets_dir, set_assets_dir
 
