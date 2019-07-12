@@ -81,6 +81,7 @@ def export_animation(version):
     cmds.select(skeleton, replace=True)
 
     mel.eval("FBXExportBakeComplexAnimation  -v true")
+    mel.eval("FBXExportInputConnections -v false")
     mel.eval("FBXExportUpAxis z")
     command = 'FBXExport -f "{}" -s'.format(fbx_path)
     mel.eval(command)
@@ -102,3 +103,5 @@ def publish():
     delete_export_skeleton()
     save_release_scene(version=new_version)
 
+if __name__ == "__main__":
+    create_export_skeleton()
