@@ -17,6 +17,11 @@ def add_vendor_to_path():
     site.addsitedir(vendor_path)
 
 
+def set_playback_to_30fps():
+    cmds.currentUnit(time="ntsc")  # 30fps
+    cmds.playbackOptions(playbackSpeed=1)  # real-time playback
+
 logger.info("Loading Project Borealis tools.")
 add_vendor_to_path()
+set_playback_to_30fps()
 build_menu()
